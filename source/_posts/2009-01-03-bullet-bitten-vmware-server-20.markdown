@@ -6,7 +6,7 @@ tags: []
 ---
 
 My home network has been growing and growing ever since the start. At first,
-just little linux firewall, and it's not done yet.
+just little Linux firewall, and it's not done yet.
 
 I've recently upgraded the my new server, adding another 4GB of RAM to bring the
 total to 8GB - to give me some more room for playing around. Also, I've decided
