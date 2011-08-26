@@ -2,38 +2,38 @@
 layout: default
 footer: false
 ---
-<div class="blog-index">
-{% assign index = true %}
-{% for post in paginator.posts %}
-{% assign content = post.content %}
-  <article>
-    {% include article.html %}
-  </article>
-{% endfor %}
-<nav role="pagination">
-  <div>
-    {% if paginator.next_page %}
-      <a class="prev" href="/page{{paginator.next_page}}/">&larr; Older</a>
-    {% endif %}
-    <a href="/blog/archives">Blog Archives</a>
-    {% if paginator.previous_page and paginator.previous_page > 1 %}
-      <a class="next" href="/page{{paginator.previous_page}}/">Newer &rarr;</a>
-    {% elsif paginator.previous_page %}
-      <a class="next" href="/">Newer &rarr;</a>
-    {% endif %}
+<div id="index">
+  <div id="content">
+    <img class="portrait" src="/images/portrait.jpg" />
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm Rob. I'm a web applications developer and systems administrator
+      from Nottingham, England.
+    </p>
+    <p>
+      I graduated from the <a href="http://www.nottingham.ac.uk">University of Nottingham</a>
+      in July this year, with a first-class honours in Computer Science.
+    </p>
+    <h2>Projects</h2>
+    <p>
+    I'm usually working on at least one project, so check out my
+    <a href="https://github.com/robgolding63">GitHub Page</a> to see what I'm up to at the moment.
+    </p>
+    <p>
+      Most recently, I developed an open source continuous backup system for my third-year project at university.
+      It's designed to be hosted in-house, for small and medium businesses. The code is licensed under the GPL,
+      and can be found at the project's <a href="http://github.com/robgolding63/backtrac/">GitHub page</a>.
+    </p>
+    <h2>Work</h2>
+    <p>
+      I'm an experienced systems administrator, with extensive knowledge managing and automating both Windows and Linux
+      systems. Also, I have written numerous web applications using the
+      <a href="http://djangoproject.com/">Django web framework</a>.
+    </p>
+    <p>
+      For more details about my experience and skills, see my <a href="/cv/">Curriculum Vitae</a>.
+    </p>
   </div>
-</nav>
-{% if site.disqus_short_name %}
-<script type="text/javascript">
-    var disqus_shortname = '{{ site.disqus_short_name }}';
-    (function () {
-      var s = document.createElement('script'); s.async = true;
-      s.type = 'text/javascript';
-      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
-{% endif %}
 </div>
 <aside role=sidebar>
   {% if site.blog_index_asides.size %}

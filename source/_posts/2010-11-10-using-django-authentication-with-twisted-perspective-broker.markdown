@@ -8,7 +8,7 @@ tags:
 - twisted
 ---
 
-For my [third year project][back-to-backtrack], I have hooked Twisted's
+For my [third year project][back-to-backtrac], I have hooked Twisted's
 _Perspective Broker_ authentication into Django, so that a networked
 application can authenticate itself against Django's central user database
 (`django.contrib.auth`). The process is pretty quick and easy, thanks to
