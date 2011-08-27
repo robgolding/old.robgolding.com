@@ -20,6 +20,7 @@ posts_dir    = "_posts"    # directory for blog files
 themes_dir   = ".themes"   # directory for blog files
 new_post_ext = "markdown"  # default new post file extension when using the new_post task
 new_page_ext = "markdown"  # default new page file extension when using the new_page task
+blog_index_dir = "source/blog"
 
 
 desc "Initial setup for Octopress: copies the default theme into the path of Jekyll's generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]"
