@@ -47,7 +47,7 @@ class DjangoAuthChecker:
             user = User.objects.get(username=credentials.username)
             return defer.maybeDeferred(
                 check_password,
-                credentials.username,
+                credentials.password,
                 user.password).addCallback(self._passwordMatch, user)
         except User.DoesNotExist:
             return defer.fail(error.UnauthorizedLogin())
@@ -61,6 +61,9 @@ corresponds to those credentials (or a failure if necessary). This return value
 is wrapped up inside a Deferred, which is something that I won't go into detail
 about in this post. For more information on Deferred objects, this is one area
 where the [Twisted documentation][docs] is quite detailed.
+
+_Edit: Fixed a bug in the above code on line 24, thanks to Tom Leys of GridSpy
+for pointing it out._
 
 The Realm
 ---------
