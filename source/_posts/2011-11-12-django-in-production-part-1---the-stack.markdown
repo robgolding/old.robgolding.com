@@ -3,7 +3,9 @@ layout: post
 title: "Django in Production: Part 1 - The Stack"
 date: 2011-11-12 22:35
 comments: true
-categories: 
+tags:
+- django
+- programming
 ---
 
 Everyone has their preferred way of doing things, and this is more and more
