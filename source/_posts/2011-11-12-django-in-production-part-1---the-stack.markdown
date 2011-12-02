@@ -154,6 +154,8 @@ process of migrating a production database using this very technique.
 In the next post in this series, I'll be talking about executing long-running
 background tasks with [Celery][celery].
 
+*Part 2 of this series is now available: [Background Tasks][part2].*
+
 [benchmark]: http://nichol.as/benchmark-of-python-web-servers
 [gunicorn]: http://gunicorn.org
 [gunicorn-deploy]: http://gunicorn.org/deploy.html
@@ -164,3 +166,4 @@ background tasks with [Celery][celery].
 [mysql]: http://www.mysql.com
 [south]: http://south.aeracode.org
 [celery]: http://celeryproject.org
+[part2]: /blog/2011/11/27/django-in-production-part-2---background-tasks/

@@ -71,6 +71,10 @@ In fact, Celery even comes with some
 [example Supervisor configuration][celery-supervisor] files, which can be
 adapted to suit the particular needs of a production setup.
 
+This configuration can be added to the same file which contains the application
+server's program directives. This keeps all the daemons for an application
+neatly together in one file.
+
 ### Worker Nodes
 
 In development, a Celery worker would typically be spun up in another terminal
@@ -78,9 +82,10 @@ window, alongside the development server. This same technique can't be assumed
 though, for a production setup.
 
 At first, perhaps, the task queue worker(s) might be running on the same server
-as the application itself. There comes a point, though, where it makes sense to
-have at least one server dedicated to running asynchronous tasks. This can then
-be scaled out to suit, by adding more and more worker servers as required.
+as the application itself. As an application grows, there comes a point where
+it makes sense to have at least one server dedicated to running asynchronous
+tasks. This can then be scaled out to suit, by adding more and more worker
+servers as required.
 
 RabbitMQ
 --------
@@ -102,8 +107,8 @@ In this case, multiple applications might share the same message broker.
 RabbitMQ supports this type of configuration through the use of *virtual hosts*
 (or VHosts). Much like virtual hosts used in Apache, these allow a single
 broker to be "split" into multiple, distinct parts. Access control can be
-configured over virtual hosts, so any single application is prevented from
-affecting another's application through the use of a shared broker.
+configured on a per-vhost basis, so any single application is prevented from
+affecting another through the use of a shared broker.
 
 Even if your message broker is only used by one application, that application
 should be configured with its own virtual host and credentials.
@@ -113,8 +118,8 @@ Monitoring
 
 It's difficult to know exactly what a task queue like Celery is doing, as it
 doesn't present a pretty web interface for us to watch. It can, however, be
-monitored - and this is something I'll be talking about in detail later on in
-the series.
+monitored - and this is something I'll be talking about in detail in the next
+post - *Logging and Monitoring*.
 
 [part1]: /blog/2011/11/12/django-in-production-part-1---the-stack/
 [celery]: http://celeryproject.org/
