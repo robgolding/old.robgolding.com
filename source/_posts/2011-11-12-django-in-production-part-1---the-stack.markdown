@@ -18,6 +18,8 @@ describing how I deploy Django applications in production from a high-level
 perspective. In the first part of this series, I'll talk about the core stack
 which serves as the basis of the application.
 
+<!--more-->
+
 Gunicorn
 --------
 
