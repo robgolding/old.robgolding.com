@@ -19,5 +19,18 @@ deployment can be automated.
 
 <!--more-->
 
+Monitoring Django Applications
+------------------------------
+
+There are many ways to monitor a Django application, but the ones that are of
+particular interest to me are those that report on the running status of the
+various components comprising an application (i.e. internal monitoring). This
+makes up just one part of the suite of monitoring tools that can (and should)be
+used in a production setup.
+
+### Monit
+
+
+
 [part1]: /blog/2011/11/12/django-in-production-part-1---the-stack/
 [part2]: /blog/2011/12/11/django-in-production-part-3---automation-and-monitoring/
