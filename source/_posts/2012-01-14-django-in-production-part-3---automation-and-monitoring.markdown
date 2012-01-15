@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Django in Production: Part 3 - Automation &amp; Monitoring"
-date: 2011-12-11 13:25
+date: 2012-01-14 13:25
 comments: true
 tags: 
 - django
