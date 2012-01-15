@@ -11,16 +11,17 @@ systems, and I am a skilled programmer. Also, I have an in-depth knowledge of
 the Django framework, and very much enjoy writing web applications using it.
 
 I graduated from The University of Nottingham, England in July 2011, and am
-open to offers of employment in and around the Nottingham area.
+open to offers of employment anywhere in the UK.
 
-My full CV, in PDF format, is available [here][cv].
+My CV is available in both [HTML][cv-html] and [PDF][cv-pdf] format.
 
-[{% img center http://cdn.robgolding.com/cv.png %}][cv]
+[{% img center http://cdn.robgolding.com/cv.png %}][cv-pdf]
 
 For a bit more detail, I keep an up-to-date profile on
 [StackOverflow Careers][socareers].
 
 [{% img center http://cdn.robgolding.com/socareers.png %}][socareers]
 
-[cv]: https://s3-eu-west-1.amazonaws.com/robgolding.com/cv.web.pdf
+[cv-html]: http://robgolding.com.s3.amazonaws.com/CV/index.html
+[cv-pdf]: http://robgolding.com.s3.amazonaws.com/CV/cv.pdf
 [socareers]: http://careers.stackoverflow.com/robgolding
