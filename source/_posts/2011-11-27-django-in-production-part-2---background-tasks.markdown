@@ -119,9 +119,12 @@ Monitoring
 It's difficult to know exactly what a task queue like Celery is doing, as it
 doesn't present a pretty web interface for us to watch. It can, however, be
 monitored - and this is something I'll be talking about in detail in the next
-post - *Logging and Monitoring*.
+post of this series.
+
+*Part 3 of this series is now available: [Automation and Monitoring][part3].*
 
 [part1]: /blog/2011/11/12/django-in-production-part-1---the-stack/
+[part3]: /blog/2012/01/14/django-in-production-part-3---automation-and-monitoring/
 [celery]: http://celeryproject.org/
 [celerydocs]: http://django-celery.readthedocs.org/en/latest/getting-started/first-steps-with-django.html
 [celery-supervisor]: https://github.com/ask/django-celery/blob/master/contrib/supervisord/celeryd.conf
