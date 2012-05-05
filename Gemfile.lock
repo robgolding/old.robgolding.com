@@ -51,7 +51,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  RedCloth (= 4.2.3)
+  RedCloth
   compass (>= 0.11)
   haml (>= 3.1)
   jekyll

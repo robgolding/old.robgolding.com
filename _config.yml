@@ -89,7 +89,6 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-<<<<<<< HEAD
 disqus_short_name: robgolding
 disqus_show_comment_count: false
 
