@@ -1,9 +1,0 @@
---- 
-layout: post
-title: MyUni
-tags: []
-
----
-After being forced to use the University's new[WebCT](http://webct.nottingham.ac.uk "Nottingham WebCT") system, a group of friends ([Marcus Whybrow](http://www.marcuswhybrow.net "Marcus Whybrow"),[Rob Miles](http://www.robertskmiles.com "Robert S. K. Miles"),[Ben Jenkinson](http://www.benjenkinson.com "Ben Jenkinson")) and I decided to build the whole thing from scratch, using[Django](http://www.djangoproject.com "Django Project").
-
-[MyUni ?](http://bitbucket.org/robgolding63/myuni/ "MyUni")

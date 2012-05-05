@@ -1,9 +1,0 @@
---- 
-layout: post
-title: django-radius
-tags: []
-
----
-[django-radius](https://github.com/robgolding63/django-radius/ "django-radius") is, fairly obviously, a RADIUS authentication backend for Django. It's also a little more than that, however. It allows you to authenticate against different RADIUS servers depending on some condition (which you specify with your own code). As a hint, it's pretty useful for cloud apps which might authenticate to customer's systems.
-
-For full details, see the [documentation](https://github.com/robgolding63/django-radius/blob/master/README.md "django-radius README").
