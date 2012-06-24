@@ -1,0 +1,71 @@
+---
+layout: post
+title: "Django Class-Based Views"
+date: 2012-06-24 21:01
+comments: true
+categories: 
+---
+
+Django class-based views have been getting quite a bit of attention recently.
+I'm not going to add my voice to the debate, but one thing that can be said is
+that the documentation for class-based (generic) views is not on a par with
+what we've come to expect from the Django project. This was highlighted by
+a Stack Overflow question I answered yesterday.
+
+In this post, I'd like to share some of the techniques and practices that
+I have settled upon after working with them for a good while.
+
+Mixins vs. Strict Inheritance
+-----------------------------
+
+One of the issues I came up against almost immediately was restricting views to
+authenticated users. With functional views, the code looks something like this:
+
+{% codeblock auth_view.py %}
+@login_required
+def secret_view(request, *args, **kwargs):
+    return HttpResponse('The answer is 42')
+{% endcodeblock %}
+
+However, with class-based views, you're forced into writing the following:
+
+{% codeblock auth_cbv.py %}
+class SecretView(View):
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(SecretView, self).dispatch(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('The answer is 42')
+{% endcodeblock %}
+
+Once you have more than a couple of views (one, strictly) that require this
+behaviour, your ``views.py`` starts to look very *wet* indeed!
+
+One solution to this slippery problem is to use mixins. ``django-braces``
+provides a few useful ones, including ``LoginRequiredMixin`` and
+``PermissionRequiredMixin``. A mixin which provides the same functionality as
+the above code would look like this:
+
+{% codeblock mixins.py %}
+class LoginRequiredMixin(object):
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(LoginRequiredMixin, self).dispatch(
+            self, request, *args, **kwargs)
+{% endcodeblock %}
+
+Now, this might seem like a really simple class (in truth, it is), but it
+hinges on the way ``super`` works. It's out of the scope of this post to
+discuss the intricacies, but I would strongly recommend reading
+[super-harmful][this article] to understand them. The important thing to
+remember when using a mixin like this, which overrides the implementation of
+a method from "above", is to put it *first* in the list of base classes:
+
+{% codeblock views.py %}
+class SecretView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('The answer is 42')
+{% endcodeblock %}
+
