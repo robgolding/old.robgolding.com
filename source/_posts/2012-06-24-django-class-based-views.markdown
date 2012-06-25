@@ -6,14 +6,16 @@ comments: true
 categories: 
 ---
 
-Django class-based views have been getting quite a bit of attention recently.
+Django class-based views have been getting quite a bit of
+[attention][cbv-mistake] [recently][cbv-not-mistake].
 I'm not going to add my voice to the debate, but one thing that can be said is
 that the documentation for class-based (generic) views is not on a par with
 what we've come to expect from the Django project. This was highlighted by
-a Stack Overflow question I answered yesterday.
+a [Stack Overflow question][so-q] I answered yesterday.
 
 In this post, I'd like to share some of the techniques and practices that
-I have settled upon after working with them for a good while.
+I have settled upon after working with class-based views for some time, in the
+hope that it will be useful to people like *Vlad*.
 
 Mixins vs. Strict Inheritance
 -----------------------------
@@ -56,12 +58,12 @@ class LoginRequiredMixin(object):
             self, request, *args, **kwargs)
 {% endcodeblock %}
 
-Now, this might seem like a really simple class (in truth, it is), but it
-hinges on the way ``super`` works. It's out of the scope of this post to
-discuss the intricacies, but I would strongly recommend reading
-[super-harmful][this article] to understand them. The important thing to
-remember when using a mixin like this, which overrides the implementation of
-a method from "above", is to put it *first* in the list of base classes:
+This might seem like a really simple class (in truth, it is), but it hinges on
+the way ``super`` works. It's out of the scope of this post to discuss the
+intricacies, but I would strongly recommend reading
+[this article][super-harmful] to understand them. The important thing to
+remember when using a mixin like this, which overrides the implementation of a
+method from "above", is to put it *first* in the list of base classes:
 
 {% codeblock views.py %}
 class SecretView(LoginRequiredMixin, View):
@@ -69,3 +71,8 @@ class SecretView(LoginRequiredMixin, View):
         return HttpResponse('The answer is 42')
 {% endcodeblock %}
 
+
+[cbv-mistake]: http://lukeplant.me.uk/blog/posts/djangos-cbvs-were-a-mistake/
+[cbv-not-mistake]: http://www.boredomandlaziness.org/2012/05/djangos-cbvs-are-not-mistake-but.html
+[so-q]: http://stackoverflow.com/questions/11171813/how-to-use-named-group-with-generic-view
+[super-harmful]: https://fuhm.net/super-harmful/
