@@ -17,8 +17,8 @@ In this post, I'd like to share some of the techniques and practices that
 I have settled upon after working with class-based views for some time, in the
 hope that it will be useful to people like *Vlad*.
 
-Mixins vs. Strict Inheritance
------------------------------
+Mixins & Inheritance
+--------------------
 
 One of the issues I came up against almost immediately was restricting views to
 authenticated users. With functional views, the code looks something like this:
@@ -45,7 +45,19 @@ class SecretView(View):
 Once you have more than a couple of views (one, strictly) that require this
 behaviour, your ``views.py`` starts to look very *wet* indeed!
 
-One solution to this slippery problem is to use mixins. ``django-braces``
+My immediate thought was to use a number of "parent" views for the project,
+(inheriting from ``django.views.generic.base.View``, which would contain the
+decorated version of ``dispatch()``, and anything else that might be required.
+For example, one might require that the user be authenticated, and another
+that they are a member of staff (``user.is_staff == True``).
+
+I quickly learned that this technique wasn't ideal, though, when I started getting an unfamiliar exception: ``TypeError: MRO conflict among bases``
+
+The issue I encountered with this technique, though, is that by inheriting from multiple 
+view in combination with other generic views (such as ``FormView``, for
+example) using generic views in combination with
+
+A neat solution to this slippery problem is to use mixins. ``django-braces``
 provides a few useful ones, including ``LoginRequiredMixin`` and
 ``PermissionRequiredMixin``. A mixin which provides the same functionality as
 the above code would look like this:
