@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Django Class-Based Views"
+title: "Django Class-Based View Mixins"
 date: 2012-06-24 21:01
 comments: true
 categories: 
@@ -13,12 +13,14 @@ that the documentation for class-based (generic) views is not on a par with
 what we've come to expect from the Django project. This was highlighted by
 a [Stack Overflow question][so-q] I answered yesterday.
 
-In this post, I'd like to share some of the techniques and practices that
+In this post, I'd like to share some of the mixins
 I have settled upon after working with class-based views for some time, in the
-hope that it will be useful to people like *Vlad*.
+hope that it will be useful to people like *Vlad*. Mostly, this involves
+creating [mixins][wiki-mixins], which extend the functionality of Django's
+[generic views][generic-views-docs].
 
-Mixins & Inheritance
---------------------
+Authentication & Permissions
+----------------------------
 
 One of the issues I came up against almost immediately was restricting views to
 authenticated users. With functional views, the code looks something like this:
@@ -51,11 +53,8 @@ decorated version of ``dispatch()``, and anything else that might be required.
 For example, one might require that the user be authenticated, and another
 that they are a member of staff (``user.is_staff == True``).
 
-I quickly learned that this technique wasn't ideal, though, when I started getting an unfamiliar exception: ``TypeError: MRO conflict among bases``
-
-The issue I encountered with this technique, though, is that by inheriting from multiple 
-view in combination with other generic views (such as ``FormView``, for
-example) using generic views in combination with
+I quickly learned that this technique wasn't ideal, though, when I started
+getting an unfamiliar exception: ``TypeError: MRO conflict among bases``.
 
 A neat solution to this slippery problem is to use mixins. ``django-braces``
 provides a few useful ones, including ``LoginRequiredMixin`` and
