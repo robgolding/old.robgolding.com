@@ -3,7 +3,9 @@ layout: post
 title: "Django Class-Based View Mixins: Part 1"
 date: 2012-07-12 11:01
 comments: true
-categories: 
+tags:
+- django
+- programming
 ---
 
 Django class-based views have been getting quite a bit of
