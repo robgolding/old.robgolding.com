@@ -12,7 +12,7 @@ deploy_default = "s3"
 
 ## -- S3 Deploy Config -- ##
 # Requires s3cmd. `brew install s3cmd` or see http://s3tools.org/download
-s3_bucket      = "website.com"
+s3_bucket      = "robgolding.com"
 s3_delete      = false
 
 # This will be configured for you when you run config_deploy
