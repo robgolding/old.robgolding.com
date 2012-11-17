@@ -29,8 +29,8 @@ class WidgetListView(ListView):
         order = self.request.GET.get('order')
         sort_field = 'id'
         if sort_by == 'name':
-            order_field = 'widget_name'
-        qs = super(WidgetListView, self).get_queryset().order_by(order_field)
+            sort_field = 'widget_name'
+        qs = super(WidgetListView, self).get_queryset().order_by(sort_field)
         if order == 'desc':
             qs = qs.reverse()
         return qs
