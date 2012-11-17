@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Django Class Based View Mixins: Part 2"
+title: "Django Class-Based View Mixins: Part 2"
 date: 2012-11-17 20:39
 comments: true
 tags:
