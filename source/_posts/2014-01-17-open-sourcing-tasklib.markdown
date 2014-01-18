@@ -27,7 +27,7 @@ thing, but I wanted to achieve a few things with this project:
 * A clean, simple API
 * Great documentation
 * Unit tests
-* Keeping to the Taskwarrior [3rd-party applicationguidelines][guidelines]
+* Keeping to the Taskwarrior [3rd-party application guidelines][guidelines]
   (don't try and parse the `pending.data` file!)
 
 I've used this as an opportunity to do things the Right Way&trade;: keeping
