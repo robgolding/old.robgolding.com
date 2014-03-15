@@ -6,13 +6,6 @@ sharing: false
 footer: true
 ---
 
-As previously mentioned, I have experience working with both Windows and Linux
-systems, and I am a skilled programmer. Also, I have an in-depth knowledge of
-the Django framework, and very much enjoy writing web applications using it.
-
-I graduated from The University of Nottingham, England in July 2011, and am
-open to offers of employment anywhere in the UK.
-
 My CV is available in both [HTML][cv-html] and [PDF][cv-pdf] format.
 
 [{% img center http://cdn.robgolding.com/cv.png %}][cv-pdf]
