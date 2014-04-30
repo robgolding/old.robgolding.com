@@ -132,5 +132,5 @@ which make *filtering and sorting* a breeze.
 [wiki-mixins]: http://en.wikipedia.org/wiki/Mixin
 [generic-views-docs]: https://docs.djangoproject.com/en/1.4/topics/class-based-views/
 [decorate-urlconf]: https://docs.djangoproject.com/en/1.4/topics/class-based-views/#decorating-in-urlconf
-[mro-docs]: http://www.python.org/getit/releases/2.3/mro/
+[mro-docs]: https://www.python.org/download/releases/2.3/mro
 [gist]: https://gist.github.com/3092600
